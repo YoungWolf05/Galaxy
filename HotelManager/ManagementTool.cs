@@ -3,12 +3,6 @@ using System.Collections.Generic;
 
 namespace HotelManager
 {
-    public class HotelRoom
-    {
-        public string Name;
-        public int DistanceScore;
-    }
-
     public static class ManagementTool
     {
         private static HotelRoom[] RoomList = {
@@ -63,7 +57,7 @@ namespace HotelManager
             OccupiedRooms.Remove(roomName);
             return true;
         }
-
+        
         public static bool CleanRoom(string roomName)
         {
             if (!VacantRooms.ContainsKey(roomName))
@@ -95,6 +89,13 @@ namespace HotelManager
             VacantRooms.Add(roomName, RepairingRooms[roomName]);
             RepairingRooms.Remove(roomName);
             return true;
+        }
+        public static void RemakeHotel()
+        {
+            AvailableRooms = new LinkedList<HotelRoom>(RoomList); ;
+            OccupiedRooms.Clear();
+            VacantRooms.Clear();
+            RepairingRooms.Clear();
         }
         public static void PrintStatus()
         {

@@ -8,7 +8,7 @@ namespace HotelManager
         {
             string input = string.Empty;
             Console.WriteLine("Welcome to the Hotel");
-            while (input != "exit")
+            while (input != "6")
             {
                 Console.WriteLine("0 => available, 1 => checkin, 2 => checkout, 3 => cleanroom, 4 => repairroom, 5 => repairdone, 6 => exit");
                 input = Console.ReadLine();
