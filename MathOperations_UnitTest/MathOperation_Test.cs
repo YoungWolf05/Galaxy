@@ -42,6 +42,14 @@ namespace MathOperations_UnitTest
             "((1+(-1*2",
             ExpectedResult = -2,
             TestName = "Expression_08")]
+        [TestCase(
+            "3+-1*2+4",
+            ExpectedResult = 5,
+            TestName = "Expression_09")]
+        [TestCase(
+            "3*-1+2*4",
+            ExpectedResult = 5,
+            TestName = "Expression_10")]
         public int VerifyAnswer(string expression)
         {
             string postfix = PostFix(expression);

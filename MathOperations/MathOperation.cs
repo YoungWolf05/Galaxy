@@ -24,7 +24,16 @@ namespace MathOperations
             foreach (string x in operands)
             {
                 if (isOperator(x) || x == "(") //push operators and ( to stack 
+                {
+                    if (x == "+" || x == "-")
+                    {
+                        if (st.Count > 0 && (st.Peek() == "*" || st.Peek() == "/"))
+                        {
+                            output += st.Pop();
+                        }
+                    }
                     st.Push(x);
+                }
                 else if (x == ")") // pop until ( to output and remove ( from stack
                 {
                     while (st.Peek() != "(")
